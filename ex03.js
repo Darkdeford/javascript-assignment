@@ -22,11 +22,11 @@ var map = _.curry(function(fn, collection){
 
 var nicePrint = function(chr){
   return chr.user + ' is ' + chr.age;
-}
+};
 
 /* --- */
 
-var youngest = _.flow( /*  your code */ );
+var youngest = _.flow([sort('age'), _.head, nicePrint]);  // <!-- I wasn't sure if I can use _.head function
 
 console.log( youngest(users) ); 
 // pebbles is 1
