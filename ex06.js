@@ -33,3 +33,29 @@ You only need to check that the ids match.
 
 Tip: you can use array#some and Array#every or _.includes
 */
+
+var goodUsers = [
+    { id: 1 },
+    { id: 2 },
+    { id: 3 }
+];
+
+function checkUsersValid(goodUsers) {
+    return (users) => users.map((user) => user.id)
+        .every((id) => goodUsers.map((user) => user.id).includes(id));
+}
+
+var testAllValid = checkUsersValid(goodUsers);
+
+//TESTS
+console.log(testAllValid([
+    { id: 2 },
+    { id: 1 }
+]));
+
+console.log(testAllValid([
+    { id: 2 },
+    { id: 4 },
+    { id: 1 }
+]));
+
