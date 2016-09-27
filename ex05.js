@@ -17,6 +17,29 @@ The function should return an array containing the messages themselves, without 
 
 */
 
-function getShortMessages(){
-  /* your code */
+const messages = [
+    {
+        message: 'Esse id amet quis eu esse aute officia ipsum. id amet quis eu esse aute officia ipsum.'
+    },
+    {
+        message: 'Esse id '
+    },
+    {
+        message: 'Esse id amet quis eu esse aute officia ipsum.'
+    },
+    {
+        message: 'Esse id amet quis eu esse aute officia ipsum. Esse id amet quis eu esse aute officia ipsum.'
+    },
+    {
+        message: 'Esse id amet quis eu esse aute officia.'
+    }
+];
+
+function getShortMessages(messages){
+  return messages
+      .filter(data => data.message.length < 50)
+      .map(data => data.message);
 }
+
+//TEST
+console.log(JSON.stringify(getShortMessages(messages), null, 2));
