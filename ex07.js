@@ -15,3 +15,14 @@ Example
     // }
 
 */
+let inputWords = ['Apple', 'Banana', 'Apple', 'Durian', 'Durian', 'Durian'];
+
+function countStringOccurences(inputWords) {
+    return inputWords.reduce((list, string) => {
+        list[string] = list[string] + 1 || 1;
+        return list;
+    }, {});
+}
+
+console.log(countStringOccurences(inputWords));
+
