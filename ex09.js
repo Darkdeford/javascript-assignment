@@ -27,3 +27,12 @@ Conditions
   * Use Function#bind
 
 */
+
+function logger(namespace) {
+    return ((...args) => {
+        console.log.apply(null, args);
+    }).bind(null, namespace);
+}
+
+var info = logger('INFO:');
+info('this is an info message', 'another message');
