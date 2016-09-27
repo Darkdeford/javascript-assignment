@@ -81,3 +81,17 @@ Also contrast apply with Function.prototype.call:
     add.call(null, 10, 20) // => 30
 
 */
+
+
+function logger(namespace) {
+    return ((...args) => {
+        args.unshift(namespace);
+        console.log.apply(null, args);
+    });
+}
+
+var info = logger('INFO:');
+info('this is an info message');
+
+var warn = logger('WARN:');
+warn('this is a warning message', 'with more info');
